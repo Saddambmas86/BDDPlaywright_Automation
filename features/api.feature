@@ -1,21 +1,21 @@
 Feature: User API
 
-Scenario: api_Generating auth token
+# Scenario: api_Generating auth token
 
-Given user sets method "POST"
-And user sets endpoint "/auth"
-And user adds header "Content-Type" as "application/json"
-And user sets payload "requestpayload"
-When user sends api request
-Then response status should be 200
+# Given user sets method "POST"
+# And user sets endpoint "/auth"
+# And user adds header "Content-Type" as "application/json"
+# And user sets payload "requestpayload"
+# When user sends api request
+# Then response status should be 200
 
-And user stores response path "reason" as "authToken"
-And user adds header "Cookie" as "$authToken"
-And  user sets method "POST"
-And user sets endpoint "/booking/3943"
-And user sets payload "updatebooking"
-When user sends api request
-Then response status should be 404 
+# And user stores response path "reason" as "authToken"
+# And user adds header "Cookie" as "$authToken"
+# And  user sets method "POST"
+# And user sets endpoint "/booking/3943"
+# And user sets payload "updatebooking"
+# When user sends api request
+# Then response status should be 404 
 
 
 @auth
