@@ -562,5 +562,11 @@ TO open Allure Report directly:
 npx allure-commandline open "C:\Users\Saddam\Downloads\allure-report\allure-report"
 
 
+npx allure-commandline open "C:\Users\Saddam\.jenkins\workspace\BDD_Playwright_Jenkins_GIthub\allure-report"
+
+
 Git_Token:
 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
+
+Jenkins_start:
+java -jar Jenkins.war
