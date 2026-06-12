@@ -11,8 +11,6 @@ yarn.lock
 # Build outputs
 dist/
 build/
-*.js
-*.js.map
 
 # Test reports and artifacts
 reports/
