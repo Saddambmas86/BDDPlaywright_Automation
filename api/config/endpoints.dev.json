@@ -1,0 +1,8 @@
+{
+  "auth": "https://restful-booker.herokuapp.com/auth",
+  "booking_create": "https://restful-booker.herokuapp.com/booking",
+  "booking_update": "https://restful-booker.herokuapp.com/booking/{bookingId}",
+  "booking_delete": "https://restful-booker.herokuapp.com/booking/{bookingId}",
+  "users_list": "https://jsonplaceholder.typicode.com/users",
+  "user_detail": "https://jsonplaceholder.typicode.com/users/{userId}"
+}

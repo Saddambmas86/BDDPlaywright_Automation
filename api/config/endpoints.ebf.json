@@ -1,0 +1,8 @@
+{
+  "auth": "https://ebf-api.example.com/auth",
+  "booking_create": "https://ebf-api.example.com/v1/booking",
+  "booking_update": "https://ebf-api.example.com/v1/booking/{bookingId}",
+  "booking_delete": "https://ebf-api.example.com/v1/booking/{bookingId}",
+  "users_list": "https://ebf-api.example.com/users",
+  "user_detail": "https://ebf-api.example.com/users/{userId}"
+}

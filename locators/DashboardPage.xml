@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  DashboardPage Locators
+  This XML file contains all locators for the Dashboard/Products page.
+-->
+<DashboardPage>
+  <!-- Products page title -->
+  <pageTitle>xpath=//span[@class='title']</pageTitle>
+  
+  <!-- Products container -->
+  <productsContainer>xpath=//div[@class='inventory_container']</productsContainer>
+  
+  <!-- Individual product item -->
+  <productItem>xpath=//div[@class='inventory_item']</productItem>
+  
+  <!-- Product name -->
+  <productName>xpath=//a[@class='inventory_item_name']</productName>
+  
+  <!-- Add to cart button -->
+  <addToCartButton>xpath=//button[contains(text(), 'Add to cart')]</addToCartButton>
+  
+  <!-- Shopping cart icon -->
+  <shoppingCart>xpath=//a[@class='shopping_cart_link']</shoppingCart>
+  
+  <!-- Cart badge showing number of items -->
+  <cartBadge>xpath=//span[@class='shopping_cart_badge']</cartBadge>
+  
+  <!-- User menu/hamburger -->
+  <userMenu>xpath=//button[@id='react-burger-menu-btn']</userMenu>
+  
+  <!-- Logout option -->
+  <logoutOption>xpath=//a[@id='logout_sidebar_link']</logoutOption>
+  
+  <!-- Filter/Sort dropdown -->
+  <filterDropdown>xpath=//select[@class='product_sort_container']</filterDropdown>
+</DashboardPage>

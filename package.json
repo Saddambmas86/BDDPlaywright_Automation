@@ -1,0 +1,57 @@
+{
+  "name": "bdd-playwright-framework",
+  "version": "1.0.0",
+  "description": "Enterprise-level BDD automation framework using Playwright + TypeScript + Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run clean && cucumber-js",
+    "test:smoke": "rimraf allure-results && cucumber-js --tags @smoke",
+    "test:auth": "rimraf allure-results && cucumber-js --tags @auth",
+    "test:regression": "rimraf allure-results && cucumber-js --tags @regression",
+    "test:debug": "rimraf allure-results && cucumber-js --format progress --require-module ts-node/register",
+    "test:parallel": "rimraf allure-results && cucumber-js --parallel 4",
+    "test:qa": "rimraf allure-results && NODE_ENV=qa cucumber-js",
+    "test:stage": "rimraf allure-results && NODE_ENV=stage cucumber-js",
+    "test:prod": "rimraf allure-results && NODE_ENV=prod cucumber-js",
+    "convert:allure": "node convert-cucumber-to-allure.js",
+    "allure:generate": "npm run convert:allure && allure generate ./allure-results --clean -o ./allure-report",
+    "allure:open": "allure open ./allure-report",
+    "allure:clean": "rimraf allure-results allure-report",
+    "report": "npm run allure:generate && npm run allure:open",
+    "clean": "rimraf reports allure-results allure-report",
+    "test:scenario": "npm run clean && cucumber-js --name",
+    "test:tag": "npm run clean && cucumber-js --tags"
+  },
+  "keywords": [
+    "BDD",
+    "Cucumber",
+    "Playwright",
+    "TypeScript",
+    "Automation",
+    "Testing"
+  ],
+  "author": "Automation Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "@cucumber/messages": "^21.0.0",
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.6",
+    "@types/xml2js": "^0.4.11",
+    "allure-commandline": "^2.41.0",
+    "allure-cucumberjs": "^2.2.2",
+    "allure-playwright": "^2.9.2",
+    "cucumber-html-reporter": "^7.1.1",
+    "dotenv": "^16.3.1",
+    "playwright": "^1.40.1",
+    "playwright-bdd": "^8.5.1",
+    "rimraf": "^6.1.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "xml2js": "^0.6.2"
+  },
+  "dependencies": {
+    "mssql": "^12.5.5",
+    "mysql2": "^3.22.5"
+  }
+}

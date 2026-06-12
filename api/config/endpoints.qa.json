@@ -1,0 +1,8 @@
+{
+  "auth": "https://qa-api.example.com/auth",
+  "booking_create": "https://qa-api.example.com/v1/booking",
+  "booking_update": "https://qa-api.example.com/v1/booking/{bookingId}",
+  "booking_delete": "https://qa-api.example.com/v1/booking/{bookingId}",
+  "users_list": "https://qa-api.example.com/users",
+  "user_detail": "https://qa-api.example.com/users/{userId}"
+}

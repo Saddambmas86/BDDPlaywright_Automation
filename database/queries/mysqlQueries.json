@@ -1,0 +1,7 @@
+{
+  "getUsername":
+  "Select username from creds",
+
+  "getpassword":
+  "Select password from creds"
+}

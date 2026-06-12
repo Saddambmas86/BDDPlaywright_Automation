@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  LoginPage Locators
+  This XML file contains all locators for the Login page.
+  Each locator is identified by a unique name and contains the XPath, CSS, or ID selector.
+-->
+<LoginPage>
+  <!-- Username input field -->
+  <username>css=#user-name</username>
+  
+  <!-- Password input field -->
+  <password>css=#password</password>
+  
+  <!-- Login button -->
+  <loginButton>css=#login-button</loginButton>
+  
+  <!-- Error message when login fails -->
+  <errorMessage>css=[data-test='error']</errorMessage>
+  
+  <!-- Page title for verification -->
+  <pageTitle>css=span:has-text("Products")</pageTitle>
+  
+  <!-- Forgot password link (alternative) -->
+  <forgotPasswordLink>css=a[href*='forgot']</forgotPasswordLink>
+</LoginPage>

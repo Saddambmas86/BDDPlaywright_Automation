@@ -1,0 +1,12 @@
+{
+  "_comment": "DEPRECATED: Use environment-specific endpoints files instead",
+  "_info": "Environment-specific endpoint files are now used:",
+  "endpoints.dev.json": "Development environment endpoints",
+  "endpoints.qa.json": "QA environment endpoints",
+  "endpoints.uat.json": "UAT environment endpoints",
+  "endpoints.ebf.json": "EBF environment endpoints",
+  "_usage": "Import EndpointsReader from utils/EndpointsReader.ts",
+  "_example": "const endpoint = EndpointsReader.getEndpoint('auth');",
+  "note": "Endpoints are now loaded dynamically based on NODE_ENV"
+}
+

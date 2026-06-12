@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+*.js
+*.js.map
+
+# Test reports and artifacts
+reports/
+allure-results/
+allure-report/
+playwright-report/
+test-results/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.orig
+*~
+
+# Screenshots and videos
+screenshots/
+videos/
+
+# Temporary files
+.tmp/
+temp/
+tmp/
