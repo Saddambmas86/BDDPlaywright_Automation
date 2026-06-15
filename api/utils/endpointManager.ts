@@ -16,16 +16,16 @@ export class EndpointManager {
     // Using switch statement to determine file path based on environment
     switch (environment.toLowerCase()) {
       case 'qa':
-        return path.resolve('api/config/endpoints.qa.json');
+        return path.resolve('api/endpoints/endpoints.qa.json');
       case 'uat':
-        return path.resolve('api/config/endpoints.uat.json');
+        return path.resolve('api/endpoints/endpoints.uat.json');
       case 'ebf':
-        return path.resolve('api/config/endpoints.ebf.json');
+        return path.resolve('api/endpoints/endpoints.ebf.json');
       case 'dev':
-        return path.resolve('api/config/endpoints.dev.json');
+        return path.resolve('api/endpoints/endpoints.dev.json');
       default:
         Logger.warn(`Unknown environment: ${environment}. Defaulting to dev endpoints.`, { environment });
-        return path.resolve('api/config/endpoints.dev.json');
+        return path.resolve('api/endpoints/endpoints.dev.json');
     }
   }
 
@@ -117,9 +117,17 @@ export class EndpointManager {
    */
   static printEndpoints(): void {
     const endpoints = this.loadEndpoints();
-    console.log('\n╔════════════════════════════════════════════╗');
-    console.log(`║    API Endpoints - ${this.currentEnvironment.toUpperCase()} Environment       ║`);
-    console.log('╚════════════════════════════════════════════╝\n');
+    // console.log('\n╔════════════════════════════════════════════╗');
+    // console.log(`║    API Endpoints - ${this.currentEnvironment.toUpperCase()} Environment       ║`);
+    // console.log('╚════════════════════════════════════════════╝\n');
+
+console.log(`
+🌟════════════════════════════════════════════════🌟
+        API Endpoints - ${this.currentEnvironment.toUpperCase()} Environment
+🌟════════════════════════════════════════════════🌟
+`);
+
+
 
     if (Object.keys(endpoints).length === 0) {
       console.log('No endpoints loaded');

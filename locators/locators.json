@@ -1,23 +1,9 @@
 {
-    "loginButton": {
-        "type": "css",
-        "value": "#login2"
-    },
-    "productsMenu": {
-        "type": "xpath",
-        "value": "//span[text()='Products']"
-    },
-    "usernameTextbox": {
-        "type": "css",
-        "value": "#loginusername"
-    },
-    "passwordTextbox": {
-        "type": "css",
-        "value": "#loginpassword"
-    },
-    "signinButton": {
-        "type": "xpath",
-        "value": "//button[text()='Log in']"
-    }
-
+    "loginButton": {"type": "css","value": "#login2"},
+    "productsMenu": {"type": "xpath","value": "//span[text()='Products']"},
+    "usernameTextbox": {"type": "css","value": "#loginusername"},
+    "passwordTextbox": {"type": "css","value": "#loginpassword"},
+    "signinButton": {"type": "xpath","value": "//button[text()='Log in']"},
+    "Dropdowncountry": {"type": "css","value": "#country"},
+    "Texttools":{"type": "xpath","value": "//h1[contains(text(),'Wordscompare one platform')]"}
 }
