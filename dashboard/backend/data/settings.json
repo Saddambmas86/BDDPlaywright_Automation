@@ -1,0 +1,16 @@
+{
+  "frameworkPath": "D:/BDD_Playwright",
+  "playwrightPath": "npx playwright",
+  "reportPath": "./reports",
+  "defaultBrowser": "chromium",
+  "defaultEnvironment": "qa",
+  "defaultTimeout": 30000,
+  "defaultHeadless": true,
+  "theme": "dark",
+  "notifications": {
+    "desktop": true,
+    "slackWebhook": "",
+    "teamsWebhook": "",
+    "emailRecipient": ""
+  }
+}

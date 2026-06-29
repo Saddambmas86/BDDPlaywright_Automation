@@ -5,22 +5,86 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run clean && cucumber-js",
+    
     "test:smoke": "rimraf allure-results && cucumber-js --tags @smoke",
-    "test:auth": "rimraf allure-results && cucumber-js --tags @auth",
     "test:regression": "rimraf allure-results && cucumber-js --tags @regression",
-    "test:debug": "rimraf allure-results && cucumber-js --format progress --require-module ts-node/register",
-    "test:parallel": "rimraf allure-results && cucumber-js --parallel 4",
+    "test:sanity": "rimraf allure-results && cucumber-js --tags @sanity",
+    "test:critical": "rimraf allure-results && cucumber-js --tags @critical",
+    
     "test:qa": "rimraf allure-results && NODE_ENV=qa cucumber-js",
-    "test:stage": "rimraf allure-results && NODE_ENV=stage cucumber-js",
+    "test:dev": "rimraf allure-results && NODE_ENV=dev cucumber-js",
+    "test:sit": "rimraf allure-results && NODE_ENV=sit cucumber-js",
+    "test:uat": "rimraf allure-results && NODE_ENV=uat cucumber-js",
     "test:prod": "rimraf allure-results && NODE_ENV=prod cucumber-js",
+    
+    "test:chromium": "rimraf allure-results && BROWSER=chromium cucumber-js",
+    "test:firefox": "rimraf allure-results && BROWSER=firefox cucumber-js",
+    "test:webkit": "rimraf allure-results && BROWSER=webkit cucumber-js",
+    
+    "test:parallel": "rimraf allure-results && cucumber-js --parallel 4",
+    "test:parallel:2": "rimraf allure-results && cucumber-js --parallel 2",
+    "test:parallel:8": "rimraf allure-results && cucumber-js --parallel 8",
+    
+    "test:retry:1": "rimraf allure-results && cucumber-js --retry 1",
+    "test:retry:2": "rimraf allure-results && cucumber-js --retry 2",
+    "test:retry:3": "rimraf allure-results && cucumber-js --retry 3",
+    
+    "test:headed": "rimraf allure-results && HEADLESS=false cucumber-js",
+    "test:headless": "rimraf allure-results && HEADLESS=true cucumber-js",
+    
+    "test:debug": "rimraf allure-results && cucumber-js --format progress --require-module ts-node/register",
+    "test:scenario": "npm run clean && cucumber-js --name",
+    "test:tag": "npm run clean && cucumber-js --tags",
+    "test:feature": "npm run clean && cucumber-js",
+    
     "convert:allure": "node convert-cucumber-to-allure.js",
     "allure:generate": "npm run convert:allure && allure generate ./allure-results --clean -o ./allure-report",
     "allure:open": "allure open ./allure-report",
     "allure:clean": "rimraf allure-results allure-report",
+    "allure:serve": "allure serve ./allure-results",
+    
     "report": "npm run allure:generate && npm run allure:open",
+    "report:generate": "npm run allure:generate",
+    
     "clean": "rimraf reports allure-results allure-report",
-    "test:scenario": "npm run clean && cucumber-js --name",
-    "test:tag": "npm run clean && cucumber-js --tags"
+    "clean:reports": "rimraf reports",
+    "clean:allure": "rimraf allure-results allure-report",
+    
+    "dashboard:start": "npm run --prefix dashboard/backend start",
+    "dashboard:build": "npm run --prefix dashboard/frontend build",
+    "dashboard:dev": "concurrently \"npm run dashboard:start\" \"npm run --prefix dashboard/frontend dev\""
+  },
+  
+  "commandMappings": {
+    "suiteTypes": {
+      "all": "cucumber-js",
+      "smoke": "cucumber-js --tags @smoke",
+      "regression": "cucumber-js --tags @regression",
+      "sanity": "cucumber-js --tags @sanity",
+      "critical": "cucumber-js --tags @critical",
+      "tag": "cucumber-js --tags <TAG_VALUE>",
+      "feature": "cucumber-js <FEATURE_PATH>",
+      "scenario": "cucumber-js --name <SCENARIO_NAME>",
+      "custom": "<CUSTOM_COMMAND>"
+    },
+    "browsers": {
+      "chromium": "BROWSER=chromium",
+      "firefox": "BROWSER=firefox",
+      "webkit": "BROWSER=webkit"
+    },
+    "environments": {
+      "dev": "NODE_ENV=dev",
+      "qa": "NODE_ENV=qa",
+      "sit": "NODE_ENV=sit",
+      "uat": "NODE_ENV=uat",
+      "prod": "NODE_ENV=prod"
+    },
+    "options": {
+      "headless": "HEADLESS=true",
+      "headed": "HEADLESS=false",
+      "parallel": "--parallel <WORKERS>",
+      "retry": "--retry <COUNT>"
+    }
   },
   "keywords": [
     "BDD",

@@ -10,7 +10,7 @@ When user sends api request
 Then response status should be 200
 
 
-@auth
+@smoke
 Scenario: api_Creating users
 
 Given user sets method "POST"

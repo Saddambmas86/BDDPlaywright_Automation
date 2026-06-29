@@ -1,0 +1,502 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "User Authentication",
+    "description": "As a user, I want to authenticate into the system so that I can access my account",
+    "line": 2,
+    "id": "user-authentication",
+    "tags": [
+      { "name": "@smoke", "line": 1 },
+      { "name": "@authentication", "line": 2 }
+    ],
+    "uri": "features/authentication/UserAuthentication.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "Successful login with valid credentials",
+        "description": "",
+        "line": 6,
+        "id": "user-authentication;successful-login-with-valid-credentials",
+        "tags": [
+          { "name": "@smoke", "line": 1 }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the login page",
+            "line": 7,
+            "result": {
+              "status": "passed",
+              "duration": 1200000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I enter valid username and password",
+            "line": 8,
+            "result": {
+              "status": "passed",
+              "duration": 800000000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click the login button",
+            "line": 9,
+            "result": {
+              "status": "passed",
+              "duration": 500000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to the dashboard",
+            "line": 10,
+            "result": {
+              "status": "passed",
+              "duration": 1500000000
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "Failed login with invalid credentials",
+        "description": "",
+        "line": 13,
+        "id": "user-authentication;failed-login-with-invalid-credentials",
+        "tags": [
+          { "name": "@regression", "line": 1 }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the login page",
+            "line": 14,
+            "result": {
+              "status": "passed",
+              "duration": 1100000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I enter invalid username and password",
+            "line": 15,
+            "result": {
+              "status": "passed",
+              "duration": 700000000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click the login button",
+            "line": 16,
+            "result": {
+              "status": "passed",
+              "duration": 400000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see an error message",
+            "line": 17,
+            "result": {
+              "status": "passed",
+              "duration": 600000000
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario Outline",
+        "name": "Login with different user roles",
+        "description": "",
+        "line": 20,
+        "id": "user-authentication;login-with-different-user-roles",
+        "tags": [
+          { "name": "@critical", "line": 1 }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the login page",
+            "line": 21,
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I login as <role> user",
+            "line": 22,
+            "result": {
+              "status": "passed",
+              "duration": 900000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see <role> dashboard",
+            "line": 23,
+            "result": {
+              "status": "passed",
+              "duration": 1200000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "Shopping Cart Management",
+    "description": "As a customer, I want to manage my shopping cart so that I can purchase products",
+    "line": 2,
+    "id": "shopping-cart-management",
+    "tags": [
+      { "name": "@regression", "line": 1 },
+      { "name": "@ecommerce", "line": 2 }
+    ],
+    "uri": "features/ecommerce/ShoppingCart.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "Add product to cart",
+        "description": "",
+        "line": 6,
+        "id": "shopping-cart-management;add-product-to-cart",
+        "tags": [],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page",
+            "line": 7,
+            "result": {
+              "status": "passed",
+              "duration": 1300000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click add to cart button",
+            "line": 8,
+            "result": {
+              "status": "passed",
+              "duration": 600000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the product should be added to my cart",
+            "line": 9,
+            "result": {
+              "status": "passed",
+              "duration": 800000000
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "Remove product from cart",
+        "description": "",
+        "line": 12,
+        "id": "shopping-cart-management;remove-product-from-cart",
+        "tags": [],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I have a product in my cart",
+            "line": 13,
+            "result": {
+              "status": "passed",
+              "duration": 1100000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click remove button",
+            "line": 14,
+            "result": {
+              "status": "failed",
+              "duration": 500000000,
+              "error_message": "AssertionError: expected cart count to be 0 but got 1"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the product should be removed from cart",
+            "line": 15,
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "Update product quantity",
+        "description": "",
+        "line": 18,
+        "id": "shopping-cart-management;update-product-quantity",
+        "tags": [
+          { "name": "@sanity", "line": 1 }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I have a product in my cart",
+            "line": 19,
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I update quantity to 5",
+            "line": 20,
+            "result": {
+              "status": "passed",
+              "duration": 700000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "cart should show updated quantity",
+            "line": 21,
+            "result": {
+              "status": "passed",
+              "duration": 600000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "Product Search",
+    "description": "As a customer, I want to search for products so that I can find what I need",
+    "line": 2,
+    "id": "product-search",
+    "tags": [
+      { "name": "@smoke", "line": 1 },
+      { "name": "@search", "line": 2 }
+    ],
+    "uri": "features/ecommerce/ProductSearch.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "Search for a product by name",
+        "description": "",
+        "line": 6,
+        "id": "product-search;search-for-a-product-by-name",
+        "tags": [],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the homepage",
+            "line": 7,
+            "result": {
+              "status": "passed",
+              "duration": 900000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I search for 'laptop'",
+            "line": 8,
+            "result": {
+              "status": "passed",
+              "duration": 1200000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see search results",
+            "line": 9,
+            "result": {
+              "status": "passed",
+              "duration": 800000000
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "Search with no results",
+        "description": "",
+        "line": 12,
+        "id": "product-search;search-with-no-results",
+        "tags": [],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the homepage",
+            "line": 13,
+            "result": {
+              "status": "passed",
+              "duration": 850000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I search for 'xyznonexistent123'",
+            "line": 14,
+            "result": {
+              "status": "passed",
+              "duration": 1100000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see 'no results found' message",
+            "line": 15,
+            "result": {
+              "status": "passed",
+              "duration": 500000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "User Profile Management",
+    "description": "As a user, I want to manage my profile so that I can keep my information up to date",
+    "line": 2,
+    "id": "user-profile-management",
+    "tags": [
+      { "name": "@regression", "line": 1 }
+    ],
+    "uri": "features/user/UserProfile.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "Update user profile information",
+        "description": "",
+        "line": 6,
+        "id": "user-profile-management;update-user-profile-information",
+        "tags": [],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 7,
+            "result": {
+              "status": "passed",
+              "duration": 1400000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I navigate to profile settings",
+            "line": 8,
+            "result": {
+              "status": "passed",
+              "duration": 600000000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I update my name and email",
+            "line": 9,
+            "result": {
+              "status": "passed",
+              "duration": 900000000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I save the changes",
+            "line": 10,
+            "result": {
+              "status": "passed",
+              "duration": 700000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "my profile should be updated",
+            "line": 11,
+            "result": {
+              "status": "passed",
+              "duration": 800000000
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "Change user password",
+        "description": "",
+        "line": 14,
+        "id": "user-profile-management;change-user-password",
+        "tags": [
+          { "name": "@critical", "line": 1 }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the profile settings page",
+            "line": 15,
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I enter current password",
+            "line": 16,
+            "result": {
+              "status": "passed",
+              "duration": 500000000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter new password",
+            "line": 17,
+            "result": {
+              "status": "passed",
+              "duration": 400000000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I confirm new password",
+            "line": 18,
+            "result": {
+              "status": "passed",
+              "duration": 300000000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click change password button",
+            "line": 19,
+            "result": {
+              "status": "failed",
+              "duration": 600000000,
+              "error_message": "Error: Password does not meet complexity requirements"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see password changed successfully message",
+            "line": 20,
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
